@@ -1,0 +1,53 @@
+/*For the main screen*/
+#intro{
+    display: none;
+}
+
+/*Home Styles*/
+#home{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(255, 176, 144);
+}
+@keyframes fade{
+    from{opacity: 0;}
+    to{opacity: 1;}
+}
+#loader{
+    padding: 1%;
+    padding-top: 47vh;
+    margin: auto;
+    height: 6vh;
+    width: 25vw;
+    opacity: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: nowrap;
+    border-bottom: 5px solid rgba(243, 168, 139, 0.637);
+    animation-name: fade;
+    animation-duration: 0.5s;
+    animation-delay: 0.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+#loader div{
+    width: 6vh;
+    height: 6vh;
+    border-radius: 50%;
+    background-color: rgb(245, 22, 89);
+}
+@keyframes radial{
+    from{border-radius: 0%; opacity:0.5;}
+    to{border-radius: 50%; opacity: 1;}
+}
+#left, #right, #mid{
+    animation-name: radial;
+    animation-duration: 0.6s;
+    animation-direction: alternate;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+#mid{
+    animation-delay: 0.6s;
+}

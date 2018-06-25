@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Open+Sans|Ubuntu');
+
+
+/*Generics*/
+*{
+    user-select: none;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    font-family: 'Montserrat', sans-serif;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
+}
