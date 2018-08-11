@@ -54,7 +54,7 @@ entry.addEventListener(
             intro.children[1].className = "off";
             intro.children[2].className = "off";
             document.getElementById('home').className="on";
-            setTimeout(function(){location.assign("app.html#")}, 1000);
+            setTimeout(function(){location.assign("app.html#d")}, 1000);
         }
         else{
             pass.children[0].className = "shake";

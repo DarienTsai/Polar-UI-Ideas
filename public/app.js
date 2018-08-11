@@ -64,7 +64,7 @@ function scrolled(WheelEvent){
 if(location.href.indexOf("app.html#ui") > 0){
     location.replace("404.html");
 }
-else if(location.href.indexOf("app.html#") > 0){
+else if(location.href.indexOf("app.html#d") > 0){
     location.href.replace("app.html#", "app.html");
     location.hash = 'ui';
 }
