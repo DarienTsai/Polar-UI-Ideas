@@ -7,7 +7,7 @@
  let intro = document.getElementById("intro-nav");
  let outro= document.getElementById("intro");
  let bg = document.getElementById("intro-bg");
- intro.addEventListener('click',clickIntro);
+ intro.addEventListener('click',clickIntro,);
  outro.addEventListener('click', clickOutro, true);
 
 function clickIntro(){
@@ -47,6 +47,7 @@ entry.addEventListener(
     'mousedown',
     function(e){
         if(pass.children[0].value == "Polar"){
+            outro.removeEventListener('click', clickOutro, true);
             intro.removeEventListener('click', clickIntro);
             e.path[3].className = "load";
             e.path[2].className = "load";
