@@ -11,3 +11,8 @@
     transition-duration: 0.3s;
     transition-timing-function: ease-out;
 }
+a{
+    color: white;
+    font-style: none;
+    text-decoration: none;
+}

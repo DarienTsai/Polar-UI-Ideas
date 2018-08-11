@@ -5,8 +5,10 @@
  //The intro section DOM
  let start = document.getElementById('intro');
  let intro = document.getElementById("intro-nav");
+ let outro= document.getElementById("intro");
  let bg = document.getElementById("intro-bg");
  intro.addEventListener('click',clickIntro);
+ outro.addEventListener('click', clickOutro, true);
 
 function clickIntro(){
     intro.className = "on";
@@ -15,6 +17,14 @@ function clickIntro(){
     intro.children[2].className = "on";
     bg.className = "off";
 }
+function clickOutro(){
+    intro.className = "off";
+    intro.children[0].className = "on";
+    intro.children[1].className = "off";
+    intro.children[2].className = "off";
+    bg.className = "on";
+}
+
 let pass = document.getElementById('intro-form');
 pass.children[0].addEventListener(
     'focusin',
@@ -37,13 +47,14 @@ entry.addEventListener(
     'mousedown',
     function(e){
         if(pass.children[0].value == "Polar"){
-           intro.removeEventListener('click', clickIntro);
+            intro.removeEventListener('click', clickIntro);
             e.path[3].className = "load";
             e.path[2].className = "load";
             start.className = "load";
             intro.children[1].className = "off";
             intro.children[2].className = "off";
-            setTimeout(replace, 800);
+            document.getElementById('home').className="on";
+            setTimeout(function(){location.assign("app.html#")}, 1000);
         }
         else{
             pass.children[0].className = "shake";
@@ -73,9 +84,3 @@ pass.children[0].addEventListener(
     }
     }
 );
-
-let script = document.getElementById('main');
-let style = document.getElementById('css');
-function replace(){
-    style.href = "app.css";
-}

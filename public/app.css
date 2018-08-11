@@ -1,7 +1,3 @@
-/*For the main screen*/
-#intro{
-    display: none;
-}
 
 /*Home Styles*/
 #home{
@@ -50,4 +46,180 @@
 }
 #mid{
     animation-delay: 0.6s;
+}
+
+/*Sidebar*/
+@keyframes left{
+    from{
+        transform: translateX(-15vw);
+        opacity: 0;
+    }
+    to{
+        transform: none;
+        opacity: 1;
+    }
+}
+#nav{
+    position: absolute;
+    height: 100vh;
+    width: 10%;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0);
+    box-shadow: 0 0 20px 25px rgba(0, 0, 0, 0);
+    overflow-y: auto;
+    overflow-x: visible;
+    text-overflow: ellipsis;
+    font-size: 3vw;
+    word-wrap: nowrap;
+    transition-duration: 0.2s;
+    animation: left 0.5s forwards 1;
+}
+#nav:hover{
+    background-color: rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 20px 25px rgba(0, 0, 0, 0.2);
+    width: 15%;
+}
+.nav-item{
+    color: rgba(255, 255, 255, 0.74);
+    padding: 2%;
+    box-sizing: border-box;
+    width: 100%;
+    text-indent: 0.7vw;
+    cursor: pointer;
+    transition-duration: 0s;
+}
+.nav-item:hover{
+    text-indent: 0.85vw;
+    color: rgba(255, 255, 255, 0.877);
+}
+.nav-item.active{
+    color: white;
+    background: linear-gradient(to right, rgba(216, 216, 216, 0.363), rgba(0,0,0,0));
+}
+/*Project Selection*/
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+        transform: translateY(-3vh);
+    }
+    to{
+        opacity: 1;
+        transform: none;
+    }
+}
+#module{
+    position: absolute;
+    text-align: center;
+    font-size: 3.5vw;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 15%;
+    top: 0;
+    width: 65%;
+    height: 100%;
+}
+.mod-item{
+    width: 90%;
+    height: 60%;
+    background-color: rgb(250, 192, 169);
+    box-shadow: 0 0 35px 2px rgba(0, 0, 0, 0.336);
+    overflow: visible;
+}
+.mod-item img{
+    height: 100%;
+    margin: auto;
+}
+.mod-item figcaption{
+    position: relative;
+    top: -15vh;
+    z-index: 2;
+    opacity: 0;
+    animation: fadeIn 0.4s 0.2s forwards 1;
+}
+.mod-item.on{
+    animation: fadeIn 0.4s forwards 1;
+}
+.mod-item.off{
+    display: none;
+}
+/*Description*/
+@keyframes right{
+    from{
+        transform: translateX(10vw);
+        opacity: 0;
+    }
+    to{
+        transform: none;
+        opacity: 1;
+    }
+}
+#context{
+    position: absolute;
+    top: -10vh;
+    right: -45vh;
+    width: 110vh;
+    height: 120vh;
+    background-color: rgb(245, 22, 89);
+    border-radius: 50%;
+    animation: right 0.7s forwards 1;
+}
+#info{
+    position: absolute;
+    top: 20%;
+    right: 45vh;
+    height: 60%;
+    width: 37%;
+    overflow: visible;
+    opacity: 0;
+    animation: right 0.7s 0.2s forwards 1;
+}
+.desc.on{
+    color: white;
+    font-size: 2vw;
+    text-align: center;
+    display: initial;
+}
+.desc.off{
+    display: none;
+}
+.desc h3{
+    padding: 1.5%;
+    box-sizing: border-box;
+    opacity: 0;
+    animation: right 0.4s 0.07s forwards 1;
+}
+.desc p{
+    overflow-y: auto;
+    padding: 1.2%;
+    font-size: 1.5vw;
+    width: 100%;
+    height: 80%;
+    box-sizing: border-box;
+    color: rgba(255, 255, 255, 0.897);
+    opacity: 0;
+    animation: right 0.5s 0.17s forwards 1;
+}
+.desc .button{
+    position: relative;
+    right: -9vw;
+    z-index: 3;
+    border-radius: 50%;
+    width: 10vh;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 4.5vw;
+    align-items: center;
+    background-color: rgb(246, 79, 129);
+    opacity: 0;
+    animation: right 0.7s forwards 1;
+}
+.button a{
+    transform: rotate(90deg);
+    font-family: 'Ubuntu', sans-serif;
+    padding-top: 20%;
 }
